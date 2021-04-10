@@ -8,17 +8,17 @@
 
 ## Instructions
 
-This lab involves building a basic ORM for a Dog object.  The `Dog` class
+This lab involves building a basic ORM for a Dog object. The `Dog` class
 defined in `lib/dog.rb` implements behaviors of a basic ORM.
 
 ### **Environment**
 
-Our environment is going to be a single point of requires and loads.  It is also
+Our environment is going to be a single point of requires and loads. It is also
 going to define a constant, `DB`, whose sole responsibility is setting up and
 maintaining connection to our application's database.
 
 - `DB = {:conn => SQLite3::Database.new("db/dogs.db")}` `DB` is set equal to a
-  hash, which has a single key, `:conn`. The key, `:conn`,  will have a value of
+  hash, which has a single key, `:conn`. The key, `:conn`, will have a value of
   a connection to a sqlite3 database in the db directory.
 
 However, in our `spec_helper`, which is our testing environment, we're going to
@@ -41,7 +41,7 @@ pairs as an argument. key-value pairs need to contain id, name, and breed.
 
 - **`::create_table`**
 
-Your task  here is to define a class method on Dog that will execute the correct
+Your task here is to define a class method on Dog that will execute the correct
 SQL to create a dogs table.
 
 **note:** You will notice below a new sign, `::`, placed before methods. Don't worry about it now. It allows methods defined within a class, to be accessed from anywhere outside that class.
@@ -87,9 +87,10 @@ class method on `Dog` that will execute the correct SQL to drop a dogs table.
 This is an interesting method. Ultimately, the database is going to return an
 array representing a dog's data. We need a way to cast that data into the
 appropriate attributes of a dog. This method encapsulates that functionality.
-You can even think of it as  `new_from_array`. Methods like this, that return
+You can even think of it as `new_from_array`. Methods like this, that return
 instances of the class, are known as constructors, just like `.new`, except that
 they extend the functionality of `.new` without overwriting `initialize`.
+e
 
 - **`::find_by_name`**
 
@@ -121,5 +122,3 @@ before, specify that the instance will receive a method call to `insert`.
 
 In the next test, we create an instance, save it, change its name, and then
 specify that a call to the save method should trigger an `update`.
-
-
